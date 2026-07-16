@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+import pandas as pd
+
 
 def plot_close_price(df, symbol):
     plt.figure(figsize = (12,6))
@@ -9,22 +11,20 @@ def plot_close_price(df, symbol):
     plt.grid()
     plt.show()
 
-def plot_dividends(stock, symbol):
-    dividend = stock.dividends
-    if dividend.empty:
+def plot_dividends(dividends: pd.Series, symbol: str):
+    if dividends.empty:
         print("No dividend information available.")
         return
     
     plt.figure(figsize = (10,5))
-    plt.bar(dividend.index, dividend.values)
+    plt.bar(dividends.index, dividends.values)
     plt.title(f"{symbol} Dividend History")
     plt.xlabel("Date")
     plt.ylabel("Dividend ($)")
     plt.grid(True)
     plt.show()
 
-def plot_stock_splits(stock, symbol):
-    splits = stock.splits
+def plot_stock_splits(splits: pd.Series, symbol: str):
     if splits.empty:
         print("No stock splits history available")
         return

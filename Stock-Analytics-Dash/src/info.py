@@ -1,8 +1,6 @@
 import yfinance as yf
 
-def display_stock_info(stock):
-    info = stock.info
-    print(info)
+def display_stock_info(info: dict):
     print("\nCompany Information")
     print("-"* 40)
     
