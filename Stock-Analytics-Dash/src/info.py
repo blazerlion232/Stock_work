@@ -2,8 +2,8 @@ import yfinance as yf
 
 def display_stock_info(stock):
     info = stock.info
-
-    print("/nCompany Information")
+    print(info)
+    print("\nCompany Information")
     print("-"* 40)
     
     print(f"Company: {info.get('longName', 'N/A')}")
