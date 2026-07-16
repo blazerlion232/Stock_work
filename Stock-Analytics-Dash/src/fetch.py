@@ -1,7 +1,7 @@
 import yfinance as yf
 import pandas as pd
 
-def get_stock_data(symbol: str, period: "1mo"):
+def get_stock_data(symbol: str, period:"1mo" ):
     """
     Download stock data from Yahoo finance
     """
