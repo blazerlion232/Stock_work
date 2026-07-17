@@ -9,7 +9,6 @@ def plot_close_price(df, symbol):
     plt.xlabel("Date")
     plt.ylabel("Price ($)")
     plt.grid()
-    plt.show()
 
 def plot_dividends(dividends: pd.Series, symbol: str):
     if dividends.empty:
@@ -22,7 +21,6 @@ def plot_dividends(dividends: pd.Series, symbol: str):
     plt.xlabel("Date")
     plt.ylabel("Dividend ($)")
     plt.grid(True)
-    plt.show()
 
 def plot_stock_splits(splits: pd.Series, symbol: str):
     if splits.empty:
@@ -35,4 +33,3 @@ def plot_stock_splits(splits: pd.Series, symbol: str):
     plt.xlabel("Dates")
     plt.ylabel("Split Ratio")
     plt.grid(True)
-    plt.show()
