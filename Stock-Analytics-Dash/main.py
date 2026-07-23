@@ -6,12 +6,19 @@ from src.plotting import(
     plot_stock_splits
 )
 from src.info import display_stock_info
+from src.indicators import add_moving_averages
 
 def main():
     symbol = input("Enter stock ticker: ").upper()
     stock = StockData(symbol)
     history = stock.history()
+    history = add_moving_averages(
+        history,
+        sma_windows=(20,50),
+        ema_spans=(20,50)
+    )
     display_stock_info(stock.info())
+
     plot_close_price(history, symbol)
     plot_dividends(stock.dividends(), symbol)
     plot_stock_splits(stock.splits(), symbol)
